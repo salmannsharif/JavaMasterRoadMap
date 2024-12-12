@@ -1,4 +1,4 @@
-package com.training.generics;
+package com.training.generics.generic_method;
 
 /*A generic method is a method that can operate on different types (data types).
 The type is specified as a type parameter at runtime, making the method flexible and reusable for various data types.

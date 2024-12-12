@@ -1,4 +1,4 @@
-package com.training.generics;
+package com.training.generics.generic_class;
 
 class GenericClass<T> {
     T data;

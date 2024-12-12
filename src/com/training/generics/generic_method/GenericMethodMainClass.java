@@ -1,4 +1,4 @@
-package com.training.generics;
+package com.training.generics.generic_method;
 
 public class GenericMethodMainClass {
     public static void main(String[] args) {
