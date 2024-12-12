@@ -10,7 +10,6 @@ public class AllInOne {
         System.out.println("Default Constructor Invoked");
     }
 
-    private int firstValue;
 
     public AllInOne(int v){
         this();
