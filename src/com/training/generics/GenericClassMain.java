@@ -1,6 +1,6 @@
 package com.training.generics;
 
-class SampleClass<T> {
+class GenericClass<T> {
     T data;
     public void setData(T data) {
         this.data = data;
@@ -10,21 +10,21 @@ class SampleClass<T> {
     }
 }
 
-public class GenericClass {
+public class GenericClassMain {
     public static void main(String[] args) {
-        SampleClass<Integer> integerSampleClass = new SampleClass<>();
+        GenericClass<Integer> integerSampleClass = new GenericClass<>();
         integerSampleClass.setData(10);
         System.out.println(integerSampleClass.getData());
 
-        SampleClass<String> stringSampleClass = new SampleClass<>();
+        GenericClass<String> stringSampleClass = new GenericClass<>();
         stringSampleClass.setData("Hello World");
         System.out.println(stringSampleClass.getData());
 
-        SampleClass<Character> charSampleClass = new SampleClass<>();
+        GenericClass<Character> charSampleClass = new GenericClass<>();
         charSampleClass.setData('A');
         System.out.println(charSampleClass.getData());
 
-        SampleClass<Double> doubleSampleClass = new SampleClass<>();
+        GenericClass<Double> doubleSampleClass = new GenericClass<>();
         doubleSampleClass.setData(3.14);
         System.out.println(doubleSampleClass.getData());
     }

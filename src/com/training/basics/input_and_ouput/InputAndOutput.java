@@ -13,7 +13,7 @@ public class InputAndOutput {
         System.out.println("You entered the integer: " + n);
 
         // Handling leftover newline
-        sc.nextLine(); // Clear the buffer
+//        sc.nextLine(); // Clear the buffer
 
         // Asking for a string input
         System.out.print("Enter a string (name): ");

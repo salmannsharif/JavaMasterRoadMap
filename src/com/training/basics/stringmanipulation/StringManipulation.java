@@ -4,6 +4,11 @@ import java.util.Arrays;
 
 public class StringManipulation {
 
+    // String is a sequence of characters
+    // Strings are immutable
+    // All string literals in java programs such as "abc" are implemented as a instance of this class.
+    // String str = "abs"; is equivalent to chat[] ch = {'a','b','c'}; String data = new String(ch);.
+
     String str = "Hey, this is a sample string for testing";
 
     public static void main(String[] args) {
@@ -14,7 +19,7 @@ public class StringManipulation {
         System.out.println("Uppercase: " + obj.toUpperCase());
         System.out.println("Lowercase: " + obj.toLowerCase());
         System.out.println("Concatenated: " + obj.conCat());
-        System.out.println("Split: " + String.join(", ", obj.split()));
+        System.out.println("Split: " + String.join("*", obj.split()));
         System.out.println("Length: " + obj.length());
         System.out.println("Substring: " + obj.substring(5, 10));
         System.out.println("Replace: " + obj.replace("this", "that"));

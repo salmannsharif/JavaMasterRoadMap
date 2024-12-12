@@ -361,12 +361,7 @@ public class ArrList {
 
     public void forEach() {
         System.out.println("Applying forEach to print elements: ");
-        list.forEach(new Consumer<Integer>() {
-            @Override
-            public void accept(Integer integer) {
-                System.out.println(integer);
-            }
-        });
+        list.forEach(numbers -> System.out.println(numbers));
     }
 
     public void showAllElements() {
