@@ -9,7 +9,7 @@ interface Base{
     }
 }
 
-class SubClass {
+class SubClass implements Base {
     public void printMessage(){
         Base.staticMethod();
         System.out.println(Base.isStaticMethod("String"));
