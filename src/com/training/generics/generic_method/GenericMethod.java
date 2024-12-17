@@ -12,9 +12,11 @@ Compile-Time Safety:
                 It ensures type safety by catching type errors at compile time.*/
 
 public class GenericMethod {
-    public static <T> void printData(T data) {
-        System.out.println(data);
+
+    public static <T> T printData(T data){
+        return data;
     }
+
     public static <T> T findMiddleElement(T[] array){
         return array[array.length/2];
     }
