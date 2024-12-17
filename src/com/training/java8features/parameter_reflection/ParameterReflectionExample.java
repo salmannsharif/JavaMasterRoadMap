@@ -24,7 +24,10 @@ public class ParameterReflectionExample {
             Class<?> clazz = ParameterReflectionExample.class;
 
             // 2. Get the Method object for the method 'greetPerson'
+           // Method method = clazz.getDeclaredMethod("greetPerson", String.class, int.class); // This is for private variables
             Method method = clazz.getMethod("greetPerson", String.class, int.class);
+
+//            method.setAccessible(true); // This is for private variables to be accessible
 
             // 3. Get the parameters of the method
             Parameter[] parameters = method.getParameters();
