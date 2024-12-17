@@ -10,7 +10,6 @@ package com.training.java8features.parameter_reflection;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
-import java.util.Arrays;
 
 public class ParameterReflectionExample {
 
