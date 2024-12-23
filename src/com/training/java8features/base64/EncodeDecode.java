@@ -13,7 +13,6 @@ public class EncodeDecode {
         Base64.Decoder decoder = Base64.getDecoder();
         byte[] decoded = decoder.decode(str);
         return new String(decoded);
-
     }
 
     public static void main(String[] args)  {

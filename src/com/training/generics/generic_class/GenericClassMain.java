@@ -1,5 +1,7 @@
 package com.training.generics.generic_class;
 
+import java.util.List;
+
 class GenericClass<T> {
     T data;
     public void setData(T data) {
@@ -12,6 +14,7 @@ class GenericClass<T> {
 
 public class GenericClassMain {
     public static void main(String[] args) {
+        List<Integer> list;
         GenericClass<Integer> integerSampleClass = new GenericClass<>();
         integerSampleClass.setData(10);
         System.out.println(integerSampleClass.getData());

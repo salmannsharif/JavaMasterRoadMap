@@ -1,7 +1,7 @@
 package com.training.basicsolutions;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.sql.*;
+import java.util.*;
 
 public class AllInOne {
     private static String name = "salman";
@@ -17,12 +17,13 @@ public class AllInOne {
     }
 
     public void firstProgram(){
-
+        System.out.println("This is the first program");
     }
 
-    public static void main(String[] args) {
-        AllInOne allInOne = new AllInOne(10);
-    }
+//    public static void main(String[] args) {
+//        AllInOne allInOne = new AllInOne(10);
+//        stackReverse();
+//    }
     public static void dataTypes(){
         byte a = 127;
         System.out.println(a);
@@ -74,23 +75,24 @@ public class AllInOne {
     }
 
     public static  void reverseString(){
-        String[] str = "this is salman from chennai".split(" ");
 
-//        for(int i=str.length()-1; i>=0 ; i--){
+//        String data = "This is sample string for testing purposes";
+//        StringBuilder sb = new StringBuilder(data).reverse();
+//        System.out.println(sb.toString());
+
+//        String str = "This is a sample data for testing purpose Oops!";
+//        for(int i=str.length()-1 ; i>=0 ; i--){
 //            System.out.print(str.charAt(i));
 //        }
-//
-        for(int i=str.length-1 ; i>=0 ; i--){
-            System.out.print(str[i]+" ");
-        }
+//        System.out.println();
 
-        String string = "this is string";
-        String [] charArray = string.split(" ");
-        String reverse="";
-        for(int i = charArray.length-1 ; i >= 0; i--) {
-            reverse =   reverse + charArray[i]+ " ";
-        };
-        System.out.println(reverse);
+//        String string = "this is string";
+//        String [] charArray = string.split(" ");
+//        String reverse="";
+//        for(int i = charArray.length-1 ; i >= 0; i--) {
+//            reverse =   reverse + charArray[i]+ " ";
+//        };
+//        System.out.println(reverse);
 
 
     }
@@ -101,37 +103,58 @@ public class AllInOne {
 
     public static void findVowels(String str){
         int vowels=0, spaces=0 , consonant=0;
+        List<Character> listVowels = new ArrayList<>();
+        List<Character> listConsonants = new ArrayList<>();
+        List<Character> listSpaces = new ArrayList<>();
         for(int i=0 ; i<str.length() ; i++){
             char ch = str.charAt(i);
             if( ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u'){
                 vowels++;
-            }else {
+                listVowels.add(ch);
+            }else if(Character.isLetter(ch)) {
                 consonant++;
+                listConsonants.add(ch);
             }
             if(Character.isWhitespace(ch)){
                 spaces++;
+                listSpaces.add(ch);
             }
         }
-        System.out.println("Number of Vowels in given String : "+vowels);
-        System.out.println("Number of Consonants in given String : "+consonant);
-        System.out.println("Number of Spaces in given String : "+spaces);
+
+        System.out.println("Number of Vowels: " + vowels + " -> " + listVowels);
+        System.out.println("Number of Consonants: " + consonant + " -> " + listConsonants);
+        System.out.println("Number of Spaces: " + spaces + " -> " + listSpaces);
 
     }
 
     public static void palindrome(String str){
-        int length = str.length();
-        boolean isPalindrome = true;
-        for(int i=0 ; i<length/2 ; i++){
-            if(str.charAt(i) != str.charAt(length-i-1)){
-                isPalindrome=false;
-                break;
-            }
-        }
-        if(isPalindrome){
+
+        // Using for loop
+//        int length = str.length();
+//        boolean isPalindrome = true;
+//        for(int i=0 ; i<length/2 ; i++){
+//            if(str.charAt(i) != str.charAt(length-i-1)){
+//                isPalindrome = false;
+//                break;
+//            }
+//        }
+//        if(isPalindrome){
+//            System.out.println("Given string is palindrome");
+//        }else{
+//            System.out.println("Given string is not palindrome");
+//        }
+
+        // Another method for checking if the given string is palindrome or not using StringBuilder.
+
+        String originalString = str.toLowerCase();
+        StringBuilder stringBuilder = new StringBuilder(originalString);
+        String reversedString = stringBuilder.reverse().toString();
+        if(originalString.equals(reversedString)){
             System.out.println("Given string is palindrome");
-        }else{
+        } else{
             System.out.println("Given string is not palindrome");
         }
+
     }
 
     public static  void swap(){
@@ -229,6 +252,17 @@ public class AllInOne {
 
     }
 
+    public static void stackReverse(){
+        String data = "This is sample string for testing purpose";
+        Stack<Character> stack = new Stack<>();
+        for( int i = 0 ; i < data.length() ; i++){
+            stack.push(data.charAt(i));
+        }
+        while (!stack.isEmpty()){
+            System.out.print(stack.pop());
+        }
+    }
+
     public static boolean isAnagram(String str_1 , String str_2){
 
         if(str_1.length() !=  str_2.length()){
@@ -306,15 +340,66 @@ public class AllInOne {
                     System.out.print("  ");
                 }
             }
+
             System.out.println();
         }
 
 
     }
+    public static void generateRandomPassword(){
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        StringBuilder stringBuilder = new StringBuilder();
+        Random random = new Random();
+        for(int i = 0 ; i < 10 ; i ++){
+            int index = random.nextInt(characters.length());
+            stringBuilder.append(characters.charAt(index));
+        }
+        System.out.println("Generated Password: "+stringBuilder);
+    }
+
+    public static void dataBaseConnectivity(){
+        String username = "postgres";
+        String password = "root123";
+        String url = "jdbc:postgresql://localhost:5432/dev_power_gym";
+        String query = "Select * from users";
+
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet =  null;
+
+        try{
+            Class.forName("org.postgresql.Driver");
+                connection = DriverManager.getConnection(username, password, url);
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(query);
+
+            while(resultSet.next()){
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String email = resultSet.getString("email");
+                String address = resultSet.getString("address");
+                String phoneNumber = resultSet.getString("phone_number");
+
+                System.out.println("id: " + id + " name: " + name + " email");
+            }
+
+            if(resultSet!=null){
+                connection.close();
+                statement.close();
+                resultSet.close();
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
 
 
+    public static void main(String[] args) {
 
-    public static void main1(String[] args) {
+        AllInOne obj = new AllInOne(10);
+
         //Hello World Program
 //        firstProgram();
 
@@ -354,22 +439,31 @@ public class AllInOne {
 //            Reverse String
 //        reverseString();
 
+//        Reverse string using stack
+//        stackReverse();
+
 //            Length of the string
 //            lengthOfString("Salman");
 
 //            Vowels
-//            findVowels("Hey GoodMorning");
+//            findVowels("Hey");
 
-//            String - Immutable , its stores data in string pool , efficiency is slow
-//            StringBuffer - mutable , its stores data on heap memory , fastest compare to string and less compare builder
-//            StringBuilder mutable , its stored data on heap memory , very fasted
+        // Generating password
+//        generateRandomPassword();
+
+
+
+
+//            String - Immutable , Its stores data in string pool , efficiency is slow
+//            StringBuffer - mutable , Its stores data on heap memory , Fastest compare to string and less compare builder
+//            StringBuilder mutable , Its stored data on heap memory , Very fasted
 
 //        String str = "this is string";
 //        StringBuffer stringBuffer = new StringBuffer("this is string buffer");
 //        StringBuilder stringBuilder = new StringBuilder("this is string builder");
 
 //            Palindrome
-//            palindrome("palindrome");
+//            palindrome("malayalam");
 
 //            Swap Numbers Using Temp Var
 //              swap();
@@ -386,10 +480,13 @@ public class AllInOne {
 
 //        fibonacci();
 
-          occurences();
+//          occurences();
         // isAnagram();
 
 //	isUnique();
+
+        // Database Connectivity
+//        dataBaseConnectivity();
 
 
 //        Scanner sc = new Scanner(System.in);
