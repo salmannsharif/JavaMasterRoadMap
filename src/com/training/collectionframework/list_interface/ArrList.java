@@ -1,13 +1,8 @@
-package com.training.collectionframework;
+package com.training.collectionframework.list_interface;
 
 import java.util.*;
 import java.util.HashSet;
-import java.util.function.Consumer;
 import java.util.function.UnaryOperator;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
 
 public class ArrList {
     private List<Integer> list;
