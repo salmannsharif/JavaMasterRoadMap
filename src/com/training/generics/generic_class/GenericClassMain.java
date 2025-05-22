@@ -21,6 +21,7 @@ public class GenericClassMain {
 
         GenericClass<String> stringSampleClass = new GenericClass<>();
         stringSampleClass.setData("Hello World");
+
         System.out.println(stringSampleClass.getData());
 
         GenericClass<Character> charSampleClass = new GenericClass<>();

@@ -1,7 +1,8 @@
 package com.training.collectionframework.set_interface;
 
-public class ArrSet {
+public class LinkedHashSetArr {
     public static void main(String[] args) {
+
 
     }
 }
