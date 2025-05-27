@@ -16,7 +16,7 @@ public class AllInOne {
         System.out.println("Param construct");
     }
 
-    public void firstProgram(){
+    public static void firstProgram(){
         System.out.println("This is the first program");
     }
 

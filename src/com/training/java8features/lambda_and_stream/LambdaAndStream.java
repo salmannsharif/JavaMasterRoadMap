@@ -12,6 +12,27 @@ import java.util.stream.Collectors;
 public class LambdaAndStream {
     public static void main(String[] args) {
 
+        /**Lambda Expression is a simplified version of methods, Unlike methods lambda doesn't have any
+        names and associated with any particular class */
+
+        /**Lambda syntax  consist of three parts - parameters, arrow mark and body.
+        The body of a lambda can be an expression or a set of statements. If it is set of statements,
+        they must be enclosed within curly braces { }. Return type and possible list of exceptions
+        that can be thrown are not explicitly mentioned in a lambda. They are implicitly applied.*/
+
+        /**
+         * Lambda Expressions	                Description
+         *
+         * () -> System.out.println("Hi..")	    Takes nothing and returns nothing.
+         * (int a) -> a * a	                    Takes int and returns int.
+         * (String s1, String s2) ->
+         * { System.out.println(s1);
+         * System.out.println(s2); }	        Takes two strings and returns nothing.
+         * (double d) -> d	                    Takes double and returns double.
+         * () -> {}	                            Takes nothing and returns nothing. It has the empty body.
+         * */
+
+
 
         List<Integer> numbers = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
 
