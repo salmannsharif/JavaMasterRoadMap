@@ -395,6 +395,32 @@ public class AllInOne {
 
     }
 
+    public static void sortStringArrayBasedOnRegex(){
+        String[] strArr = {"10", "20", "30", "x", "abc", "50", "80",
+                "100", "101"};
+        // for(int i=0; i<=strArr.length; i++){
+        //     try{
+        //         int n = Integer.parseInt(strArr[i]);
+        //         if(n>=50){
+        //             System.out.println(n);
+        //         }
+        //     }catch(Exception e){
+
+        //     }
+        // }
+        // System.out.println();
+        String numberRegex = "\\d+";
+
+        for(String str : strArr){
+            if(str.matches(numberRegex)){
+                int n = Integer.parseInt(str);
+                if(n>=50){
+                    System.out.println(n);
+                }
+            }
+        }
+    }
+
 
     public static void main(String[] args) {
 
@@ -487,6 +513,8 @@ public class AllInOne {
 
         // Database Connectivity
 //        dataBaseConnectivity();
+
+//        sortStringArrayBasedOnRegex();
 
 
 //        Scanner sc = new Scanner(System.in);
