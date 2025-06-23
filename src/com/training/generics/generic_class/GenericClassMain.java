@@ -2,6 +2,10 @@ package com.training.generics.generic_class;
 
 import java.util.List;
 
+/**
+ *  Generics are used to check the type compatibility at the compile time and
+ *  hence removing the chances of occuring ClassCastException at run time
+*/
 class GenericClass<T> {
     T data;
     public void setData(T data) {

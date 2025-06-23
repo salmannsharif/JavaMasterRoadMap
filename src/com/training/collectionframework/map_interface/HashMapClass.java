@@ -5,6 +5,37 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class HashMapClass {
+
+
+    /**
+     * 🔷 What is HashMap?
+     * HashMap is a Java class used to store key-value pairs.
+     * It allows fast access using the key — internally it uses a technique called **hashing**.
+     *
+     * 🔷 Why use HashMap?
+     * - When you need to associate one object (like an ID or name) with another (like salary or age).
+     * - For fast lookup, insertion, and deletion of values by key.
+     *
+     * 🔷 Where is HashMap used in real life?
+     * - Database-like storage (id-name mapping)
+     * - Caching (key = URL, value = web page)
+     * - Counting word frequency in documents
+     * - User settings or configurations
+     *
+     * 🔷 Advantages:
+     * - Fast performance for basic operations (O(1) on average)
+     * - No duplicate keys allowed (good for enforcing uniqueness)
+     * - Can store null keys and values (only one null key allowed)
+     *
+     * 🔷 Developer Tip (📌 What helps you become a good dev):
+     * ✅ Know when to use HashMap vs ArrayList
+     * ✅ Practice solving real-world problems (ex: count frequency, group by category)
+     * ✅ Learn how to iterate efficiently
+     * ✅ Understand key concepts like hashing, collision, load factor (for interviews)
+     * ✅ Use meaningful key names — improves readability and debugging
+     */
+
+
     private Map<String, Object> map;
     private Scanner sc;
 

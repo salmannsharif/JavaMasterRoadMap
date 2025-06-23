@@ -1,13 +1,12 @@
 package com.training.collectionframework;
 
 class A{
-    public void foo1(){
+    public void foo(){
         System.out.println("Im from A class");
     }
-
 }
 class B extends A{
-    public void foo1(){
+    public void foo(){
         System.out.println("Im from B class");
     }
 }
@@ -15,9 +14,9 @@ class B extends A{
 public class LinkedList {
     public static void main(String[] args) {
         A a = new A();
-        a.foo1();
+        a.foo();
 
         A b = new B();
-        b.foo1();
+        b.foo();
     }
 }

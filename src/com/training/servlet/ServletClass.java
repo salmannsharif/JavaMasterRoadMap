@@ -4,6 +4,7 @@ import java.io.*;
 //import javax.servlet.http.*;
 
 public class ServletClass {
+
     /**
      * Servlet is a server-side programming technology used to develop web applications.
      * It is built on top of the Java programming language and is compatible with Java classes and interfaces.

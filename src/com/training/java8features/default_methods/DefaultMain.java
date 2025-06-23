@@ -1,6 +1,6 @@
 package com.training.java8features.default_methods;
 
-public class DefaultMethods2  {
+public class DefaultMain {
     public static void main(String[] args) {
         DefaultClass defaultClass = new DefaultClass();
         defaultClass.initialize();
