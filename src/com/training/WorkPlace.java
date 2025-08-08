@@ -1,5 +1,6 @@
 package com.training;
 
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -13,22 +14,41 @@ public class WorkPlace {
 
     private static final String regularExpression = "^[a-zA-Z][^?]{7,}$\n";
 
-    //welcometojava
-    public static String getSmallestAndLargest(String s, int k) {
-        String smallest = s.substring(0, k);
-        String largest = s.substring(0, k);
-        for (int i = 0; i <= s.length()-k; i++) {
-            String stub = s.substring(i, i + k);
-            if(stub.compareTo(smallest) < 0) {
-                smallest = stub;
-            }
-            if(stub.compareTo(largest) > 0) {
-                largest = stub;
-            }
-        }
+//    static boolean isAnagram(String a, String b) {
+//        // Complete the function
+//
+//        if(a.length() != b.length()){
+//            return false;
+//        }
+//
+//        char[] charArray = a.toCharArray();
+//        char[] charArray1 = b.toCharArray();
+//
+//        Arrays.sort(charArray);
+//        Arrays.sort(charArray1);
+//
+//        return Arrays.equals(charArray, charArray1);
 
-        return smallest + "\n" + largest;
-    }
+
+//    }
+
+
+    //welcometojava
+//    public static String getSmallestAndLargest(String s, int k) {
+//        String smallest = s.substring(0, k);
+//        String largest = s.substring(0, k);
+//        for (int i = 0; i <= s.length()-k; i++) {
+//            String stub = s.substring(i, i + k);
+//            if(stub.compareTo(smallest) < 0) {
+//                smallest = stub;
+//            }
+//            if(stub.compareTo(largest) > 0) {
+//                largest = stub;
+//            }
+//        }
+//
+//        return smallest + "\n" + largest;
+//    }
 
 
     public static void main(String[] args) {
@@ -82,10 +102,17 @@ public class WorkPlace {
 //        System.out.println(a.compareTo(b) > 0 ? "Yes" : "No");
 //        System.out.println(a.substring(0,1).toUpperCase() + a.substring(1) + " " + b.substring(0,1).toUpperCase() + b.substring(1));
 
-        String s = in.next();
-        int k = in.nextInt();
-        System.out.println( getSmallestAndLargest(s, k) );
+//        String s = in.next();
+//        int k = in.nextInt();
+//        System.out.println( getSmallestAndLargest(s, k) );
 
 
+        Scanner scan = new Scanner(System.in);
+//        String a = scan.next();
+//        String b = scan.next();
+//        scan.close();
+//        boolean ret = isAnagram(a, b);
+//        System.out.println( (ret) ? "Anagrams" : "Not Anagrams" );
     }
 }
+
