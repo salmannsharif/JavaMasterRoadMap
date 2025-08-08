@@ -85,10 +85,10 @@ public class LazyAndEagerFetch {
          * If you don’t use @Transactional and use FetchType.LAZY, it might crash when accessing getDepartment().getName() because the session is already closed.
          *
          * 🧠 In Short:
-         * Feature	EAGER	LAZY
-         * Load related data	Immediately	Only when accessed
-         * Performance	May slow if data is large	Faster if related data is not needed
-         * Needs @Transactional?	No	Yes, if accessing related data
+         * Feature	                EAGER	                            LAZY
+                Load related data	                        Immediately	Only when accessed
+         *      Performance	May slow if data is large	    Faster if related data is not needed
+         *      Needs @Transactional?	No	                Yes, if accessing related data
          *
          * If you want, I can show real code from a GitHub project or simulate one in your style. Just let me know 😊
          *
@@ -190,6 +190,84 @@ public class LazyAndEagerFetch {
          * Sure, here's a simple and short paragraph to explain ACID:
          *
          * ACID is a set of properties in databases that ensure reliable and safe transactions. It stands for Atomicity, Consistency, Isolation, and Durability. Atomicity means all steps in a transaction must complete successfully or none at all. Consistency ensures the data remains valid before and after the transaction. Isolation means each transaction works independently without affecting others. Durability guarantees that once a transaction is completed, the changes are permanently saved even if the system crashes.
+         */
+
+
+        /**
+         * The @Transactional annotation in Spring is used to manage transactions automatically — ensuring atomicity, consistency, and rollback on failure. It’s especially useful when you’re doing multiple database operations that must succeed or fail together.
+         *
+         * ✅ Simple Explanation
+         * @Transactional tells Spring: “Treat this method as a single database transaction. If any part fails, roll everything back.”
+         *
+         * 🧠 Where it’s used:
+         * Multiple save, update, or delete operations
+         *
+         * Complex business logic that spans several DAO/repo calls
+         *
+         * Rollback on error or exception
+         *
+         * ✅ Real Example
+         * Let’s say you’re transferring money between two accounts.
+         *
+         * 🧾 Entity: Account
+         * java
+         * Copy
+         * Edit
+         * @Entity
+         * public class Account {
+         *     @Id
+         *     private Long id;
+         *     private String name;
+         *     private double balance;
+         *
+         *     // getters/setters
+         * }
+         * 🗂️ Repository
+         * java
+         * Copy
+         * Edit
+         * public interface AccountRepository extends JpaRepository<Account, Long> {}
+         * 💼 Service using @Transactional
+         * java
+         * Copy
+         * Edit
+         * @Service
+         * public class AccountService {
+         *
+         *     @Autowired
+         *     private AccountRepository accountRepository;
+         *
+         *     @Transactional
+         *     public void transferMoney(Long fromId, Long toId, double amount) {
+         *         Account from = accountRepository.findById(fromId).orElseThrow();
+         *         Account to = accountRepository.findById(toId).orElseThrow();
+         *
+         *         from.setBalance(from.getBalance() - amount);
+         *         to.setBalance(to.getBalance() + amount);
+         *
+         *         accountRepository.save(from);
+         *         accountRepository.save(to);
+         *
+         *         // Uncomment this to simulate failure
+         *         // if (true) throw new RuntimeException("Simulated failure");
+         *     }
+         * }
+         * ⚠️ Without @Transactional
+         * If an exception occurs after debiting but before crediting, you lose money.
+         *
+         * The debit is committed, but the credit never happens.
+         *
+         * ✅ With @Transactional
+         * Spring detects failure and rolls back both operations.
+         *
+         * Ensures data integrity.
+         *
+         * 🔄 Summary
+         * Feature	Description
+         * Rollback	Automatic rollback on exceptions
+         * Atomicity	All DB changes succeed or none
+         * Annotation Scope	Method-level or class-level
+         * Checked Exceptions	No rollback unless configured manually
          */
 
     }

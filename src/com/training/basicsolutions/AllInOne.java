@@ -130,30 +130,30 @@ public class AllInOne {
     public static void palindrome(String str){
 
         // Using for loop
-//        int length = str.length();
-//        boolean isPalindrome = true;
-//        for(int i=0 ; i<length/2 ; i++){
-//            if(str.charAt(i) != str.charAt(length-i-1)){
-//                isPalindrome = false;
-//                break;
-//            }
-//        }
-//        if(isPalindrome){
-//            System.out.println("Given string is palindrome");
-//        }else{
-//            System.out.println("Given string is not palindrome");
-//        }
+        int length = str.length();
+        boolean isPalindrome = true;
+        for(int i=0 ; i<length/2 ; i++){
+            if(str.charAt(i) != str.charAt(length-i-1)){
+                isPalindrome = false;
+                break;
+            }
+        }
+        if(isPalindrome){
+            System.out.println("Given string is palindrome");
+        }else{
+            System.out.println("Given string is not palindrome");
+        }
 
         // Another method for checking if the given string is palindrome or not using StringBuilder.
 
-        String originalString = str.toLowerCase();
-        StringBuilder stringBuilder = new StringBuilder(originalString);
-        String reversedString = stringBuilder.reverse().toString();
-        if(originalString.equals(reversedString)){
-            System.out.println("Given string is palindrome");
-        } else{
-            System.out.println("Given string is not palindrome");
-        }
+//        String originalString = str.toLowerCase();
+//        StringBuilder stringBuilder = new StringBuilder(originalString);
+//        String reversedString = stringBuilder.reverse().toString();
+//        if(originalString.equals(reversedString)){
+//            System.out.println("Given string is palindrome");
+//        } else{
+//            System.out.println("Given string is not palindrome");
+//        }
 
     }
 
