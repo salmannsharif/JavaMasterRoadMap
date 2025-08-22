@@ -4,6 +4,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import static java.util.List.*;
+
 public class AryListTask {
     public static void main(String[] args) {
 
@@ -78,6 +80,9 @@ public class AryListTask {
         // Using ArrayList.sort() - Ascending
         // ArrayList<Integer> naturalOrder = new ArrayList<Integer>(list);
 
+//        list.sort(Comparator.naturalOrder());
+//        list.stream().forEach(System.out::println);
+
         // naturalOrder.sort(Comparator.naturalOrder());
 
         // naturalOrder.stream().forEach(System.out::println);
@@ -88,9 +93,15 @@ public class AryListTask {
         // descendingOrder.sort(Comparator.reverseOrder());
         // descendingOrder.stream().forEach(System.out::println);
 
+//        list.sort(Comparator.reverseOrder());
+//        list.stream().forEach(System.out::println);
+//        list.sort(Comparator.naturalOrder());
+//        list.stream().forEach(System.out::println);
+
+
         // Using stream API
 
-         List<Integer> asc = list.stream().sorted().collect(Collectors.toList());
+        // List<Integer> asc = list.stream().sorted().collect(Collectors.toList());
         // System.out.println(asc);
 
          List<Integer> dsc = list.stream().sorted(Collections.reverseOrder()).collect(Collectors.toList());
@@ -152,6 +163,52 @@ public class AryListTask {
 //                .collect(Collectors.toList());
 //
 //        System.out.println(collect1);
+
+
+        /**
+         * Arrays.asList(array) → converts an array into a List.
+         *
+         * But the list it returns is backed by the same array.
+         * 👉 Means: if you change the list, the array changes too. If you change the array, the list also reflects that.
+         *
+         * The list is fixed-size → you can’t add or remove elements, but you can update existing ones.
+         *
+         * It’s just a view of the array, not a brand-new independent list.
+         *
+         * Example in simple words:
+         *
+         * Suppose you have an array: ["A", "B", "C"]
+         *
+         * You do Arrays.asList(array) → now you get a List that shows ["A", "B", "C"].
+         *
+         * If you change list.set(1, "X"), the array also becomes ["A", "X", "C"].
+         *
+         * But you can’t do list.add("D") → because the size is fixed.
+         *
+         * 👉 So simply:
+         * It’s a bridge that lets you use array data as if it were a list, but without giving you full freedom like a normal ArrayList
+         *
+         * ✅ In short:
+         *
+         * Arrays.asList() = fixed-size, linked directly to the array.
+         *
+         * ArrayList = dynamic, independent, full-featured list.
+         */
+//        List<Integer> list_1 = Arrays.asList(1,2,3);
+//
+//        try{
+//            list_1.add(4);
+//        }catch (Exception e){
+//            System.out.println("Exception while adding");
+//        }
+//
+//        try {
+//            list_1.set(2,2);
+//        }catch (Exception e) {
+//            System.out.println("Exception while updating");
+//        }
+
+//        System.out.println(list_1);
 
 
     }
