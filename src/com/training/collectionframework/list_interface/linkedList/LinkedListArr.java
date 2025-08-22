@@ -1,4 +1,4 @@
-package com.training.collectionframework.list_interface;
+package com.training.collectionframework.list_interface.linkedList;
 
 import java.util.LinkedList;
 
