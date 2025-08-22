@@ -1,9 +1,6 @@
-package com.training;
+package com.training.workplace;
 
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.*;
 
 public class WorkPlace {
 
@@ -12,7 +9,7 @@ public class WorkPlace {
 //        arr[6] = 700;
 //    }
 
-    private static final String regularExpression = "^[a-zA-Z][^?]{7,}$\n";
+//    private static final String regularExpression = "^[a-zA-Z][^?]{7,}$\n";
 
 //    static boolean isAnagram(String a, String b) {
 //        // Complete the function
@@ -64,7 +61,7 @@ public class WorkPlace {
 //        String regex = "\\b(\\w+)(\\s+\\1\\b)+";
 //        Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
 //
-        Scanner in = new Scanner(System.in);
+//        Scanner in = new Scanner(System.in);
 //        int numSentences = Integer.parseInt(in.nextLine());
 //
 //        while (numSentences-- > 0) {
@@ -107,12 +104,71 @@ public class WorkPlace {
 //        System.out.println( getSmallestAndLargest(s, k) );
 
 
-        Scanner scan = new Scanner(System.in);
+//        Scanner scan = new Scanner(System.in);
 //        String a = scan.next();
 //        String b = scan.next();
 //        scan.close();
 //        boolean ret = isAnagram(a, b);
 //        System.out.println( (ret) ? "Anagrams" : "Not Anagrams" );
+
+
+        Collection<Integer> collection = new ArrayList<>();
+        Collection<Integer> collection1 = new ArrayList<>();
+
+        collection1.add(3);
+        collection1.add(4);
+        collection1.add(5);
+
+//        collection.add(1);
+//        collection.add(2);
+        collection.add(3);
+        collection.add(4);
+        collection.add(5);
+
+        int i = collection.hashCode();
+        System.out.println(i);
+
+
+        List list = new LinkedList();
+        list.hashCode();
+
+        int [] arr = new int[10];
+        arr[0] = 10;
+        System.out.println("Array size "+ arr.length);
+
+        System.out.println("Collection size "+ collection.size());
+
+
+        System.out.println(collection.equals(collection1));
+
+
+
+        collection.stream().forEach(System.out::println);
+
+        ArrayList<Integer> arrList = new ArrayList<>(collection1);
+        arrList.stream().forEach(System.out::println);
+
+        System.out.println("------------------");
+
+        ArrayList list1 = new ArrayList();
+        list1.add(10);
+
+        ArrayList list2 = new ArrayList(list1);
+
+//        Collections.copy(list2, list1);
+
+
+        list2.stream().forEach(System.out::println);
+
+
+//        Integer integer = new Integer(10);
+//        Iterator<Integer> iterator = arrList.iterator();
+//        while(iterator.hasNext()){
+//            System.out.println(iterator.next());
+//        }
+//
+
+
     }
 }
 

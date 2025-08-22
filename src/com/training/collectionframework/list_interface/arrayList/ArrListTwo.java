@@ -1,4 +1,4 @@
-package com.training.collectionframework.list_interface;
+package com.training.collectionframework.list_interface.arrayList;
 
 import java.util.*;
 /**
