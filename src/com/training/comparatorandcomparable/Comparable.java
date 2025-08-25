@@ -49,7 +49,9 @@ class  Employee implements java.lang.Comparable<Employee> {
 
     @Override
     public int compareTo(Employee o) {
-        return this.salary - o.salary;
+//        return this.salary - o.salary; // ascending order
+
+        return o.salary - this.salary; // descending order
     }
 }
 

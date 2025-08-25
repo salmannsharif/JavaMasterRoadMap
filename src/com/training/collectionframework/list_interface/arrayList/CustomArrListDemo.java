@@ -77,7 +77,7 @@ class CustomArrayList<T> {
 /**
  * Main class to demonstrate CustomArrayList usage and compare with other collections
  */
-public class ArrListTwo {
+public class CustomArrListDemo {
     public static void main(String[] args) {
         System.out.println("=== Custom ArrayList Implementation ===\n");
         
