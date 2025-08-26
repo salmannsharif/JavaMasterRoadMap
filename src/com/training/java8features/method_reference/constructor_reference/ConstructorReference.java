@@ -16,7 +16,7 @@ class Message{
 public class ConstructorReference {
     public static void main(String[] args) {
         Messageable messageable = Message::new;
-        messageable.getMessage("Hi there!"); // Output: Hello, Java 8!
+        messageable.getMessage("Hi there!"); // Output: Hi there!
 
         String data = "Salman";
         Stack<Character> stack = new Stack<>();
