@@ -139,8 +139,7 @@ public class AryListTask {
 
         // Reversing an arraylist using ListIterator
 
-        ListIterator listIterator = list.listIterator(list.size());
-
+        ListIterator listIterator = list.listIterator();
 
 //        while (listIterator.hasNext()) {
 //            listIterator.next(); // Just moving, not using the value
@@ -148,6 +147,13 @@ public class AryListTask {
 
 
 //        while(listIterator.hasPrevious()){
+//            System.out.println(listIterator.previous());
+//        }
+
+
+//        ListIterator listIterator = list.listIterator(list.size());
+//
+//        while(listIterator.hasPrevious()) {
 //            System.out.println(listIterator.previous());
 //        }
 
@@ -209,7 +215,6 @@ public class AryListTask {
 //        }
 
 //        System.out.println(list_1);
-
 
     }
 }

@@ -1,4 +1,4 @@
-package com.training.collectionframework.set_interface;
+package com.training.collectionframework.set_interface.sorted_set;
 
 import java.util.HashSet;
 import java.util.TreeSet;

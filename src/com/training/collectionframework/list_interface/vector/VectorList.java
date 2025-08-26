@@ -56,6 +56,7 @@ package com.training.collectionframework.list_interface.vector;
  * So, We can set the size of the vector unlike ArrayList.
  */
 //import java.util.ArrayList; -> Use this class to see the difference between ArrayList and Vector after using Thread
+import java.util.Enumeration;
 import java.util.Vector;
 
 public class VectorList extends Thread{
@@ -124,6 +125,32 @@ public class VectorList extends Thread{
         // Vector class has separate methods for retrieving first and last elements
         System.out.println(sharedList.firstElement()); // 10
         System.out.println(sharedList.lastElement()); // 50
+
+
+        // Vector has method called elements() that returns Enumeration object which is used to iterate(traverse) over elements
+        Enumeration<Integer> elements = sharedList.elements();
+
+        while(elements.hasMoreElements()){
+            System.out.println(elements.nextElement());
+        }
+
+        /**
+         * Vector class is often considered as obsolete or “Due for Deprecation” by many experienced Java developers.
+         *  They always recommend and advise not to use Vector class in your code.
+         *  They prefer using ArrayList over Vector class.
+         *  Vector class has only one advantage over ArrayList i.e it is thread safety.
+         *  But, you can achieve thread safe ArrayList by using synchronizedList() method of Collections class.
+         *  Below is the sample code.
+         *
+         *        ArrayList<Integer> list = new ArrayList<Integer>();
+         *
+         *         Collections.synchronizedList(list);
+         *
+         */
+
+
+
+
 
     }
 }

@@ -1,5 +1,6 @@
 package com.training.collectionframework.list_interface.linkedList;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -92,6 +93,12 @@ public class LinkedListArr {
             System.out.print(item + " ");
         }
         System.out.println();
+
+        // Backward traversal
+        Iterator<String> iterator = linkedList.descendingIterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next()+ " ");
+        }
 
         // 8. Comparison with other collections
         System.out.println("\n=== LinkedList vs Other Collections ===");
