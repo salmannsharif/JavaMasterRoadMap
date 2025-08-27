@@ -2,6 +2,9 @@ package com.training.docker.dockerpushtohub;
 
 public class DockerPushCommand {
 
+    // docker build -t yourImageName:tag . -> This command will build the docker image.
+    // docker run -p 8080:8080 yourImageName:tag -> This command will run the docker image.
+
     /**
      * 🔁 1. Rebuild the Docker Image
      * Make sure you're in the root folder of your Spring Boot app (where the Dockerfile is).
