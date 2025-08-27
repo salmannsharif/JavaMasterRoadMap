@@ -11,6 +11,24 @@ public class WebSocketClass {
 
     How WebSocket works?
 
+        The handshake process:
+        1. The connection start as a regular HTTP request.
+        2. Client sends a Http handshake request with header (Upgrade: websocket) to the server to switch a protocol.
+        3. The server accepts the request and upgrades the connection to WebSocket.
+        4. Client and server now communicate using WebSocket protocol.
+
+        Data transfer phase:
+        1. After the handshake, The connection become a persistent, Bi-directional connection.
+        2. Client and server can send and receive data at the same time without re-establishing a connection.
+
+
+    Key Features of WebSocket
+
+        1. Persistent connection: Once established, the connection stays open.
+        2. Low latency: No need for repeated HTTP handshakes.
+        3. Full-duplex: Both sides can send data independently.
+        4. Efficient: Minimal overhead compared to polling or long-polling techniques.
+
 
 
      */
