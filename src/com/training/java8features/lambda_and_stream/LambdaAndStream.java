@@ -12,6 +12,10 @@ import java.util.stream.Collectors;
 public class LambdaAndStream {
     public static void main(String[] args) {
 
+        // Stream API in java used to process collections (list, set ) of data in functional way.
+        // Stream API is introduced in java 8
+        //It makes operation like filtering, mapping and reducing easier.
+
         /**Lambda Expression is a simplified version of methods, Unlike methods lambda doesn't have any
         names and associated with any particular class */
 
@@ -108,6 +112,82 @@ public class LambdaAndStream {
 
         // ------------------------------------------------------------------------------
 
+        // These are the functional interfaces internally each stream api operation uses.
+        // 1. filter()
+        // 2. map()
+        // 3. reduce()
+        // 4. forEach()
+        // 5. sorted()
+        // 6. distinct()
+        // 7. count()
+        // 8. min()
+        // 9. max()
+        // 10. findFirst()
+        // 11. findAny()
 
+        /*
+        1. filter()
+        stream.filter(n -> n % 2 == 0)
+        Interface → Predicate<T>
+
+        Why → Needs a condition returning true/false.
+
+        2. map()
+        stream.map(n -> n * n)
+        Interface → Function<T, R>
+
+        Why → Transforms one value to another.
+
+        3. reduce()
+        stream.reduce(0, (a, b) -> a + b)
+        Interface → BinaryOperator<T>
+
+        Why → Combines two values into one.
+
+        4. forEach()
+        stream.forEach(n -> System.out.println(n));
+        Interface → Consumer<T>
+
+        Why → Consumes each element but doesn’t return anything.
+
+        5. sorted()
+        stream.sorted((a, b) -> a.compareTo(b))
+        Interface → Comparator<T>
+
+        Why → Defines how two elements are compared.
+
+        6. distinct()
+
+        stream.distinct()
+        Interface → None directly (it uses hashCode() + equals())
+
+        Why → Removes duplicates using object equality.
+
+        7. count()
+
+        long count = stream.count();
+        Interface → None directly
+
+        Why → Just counts elements (terminal operation).
+
+        8. collect()
+
+        stream.collect(Collectors.toList());
+        Interface → Collector<T, A, R>
+
+        Why → Collects elements into a collection or another result container.
+
+✅ Summary Table:
+
+        Operation	Functional Interface Used
+        filter()	Predicate<T>
+        map()	Function<T, R>
+        reduce()	BinaryOperator<T>
+        forEach()	Consumer<T>
+        sorted()	Comparator<T>
+        distinct()	Uses equals() & hashCode()
+        count()	None (just counts)
+        collect()	Collector<T, A, R>
+    */
     }
 }
