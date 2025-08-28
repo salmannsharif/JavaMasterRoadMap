@@ -1,6 +1,14 @@
 package com.training.java8features.functional_interface;
 
+
 /**Functional interface is a Java 8 interface that contains only one abstract method but can have many default method.*/
+
+    /* A functional interface's main purpose is to provide a well-defined type for a lambda expression or
+    method reference. This is the mechanism that allows us to pass behavior as a parameter,
+    which in turn enables a more functional, declarative style of programming.
+    While a 'normal' interface defines a contract for an object,
+    a functional interface defines a contract for a single function,
+    making it the key that unlocked lambda expressions and modern Java APIs like Streams. */
 
     /**There is two ways to implement functional interface
   1. Anonymous inner class (Before java 8)
