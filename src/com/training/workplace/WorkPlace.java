@@ -1,6 +1,9 @@
 package com.training.workplace;
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class WorkPlace {
 
@@ -167,6 +170,19 @@ public class WorkPlace {
 //            System.out.println(iterator.next());
 //        }
 //
+
+//        String [] str = {"Salman", "Tamimggdfgsdggs", "Mohammed", "Syed", "Tahir"};
+//            int size=0;
+//            int index=0;
+//        for(int j=0; j<str.length; j++){
+//            if(size<str[j].length()){
+//                size=str[j].length();
+//                index=j;
+//            }
+//
+//        }
+//
+//        System.out.println(new StringBuilder(str[index]).reverse());
 
 
     }
