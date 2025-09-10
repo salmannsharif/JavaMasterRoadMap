@@ -9,7 +9,11 @@ public class MainClass {
      -> Abstraction in java is used to define only ideas in one class so that the ideas can be implemented by
         different Sub classes according to the requirement.*/
 
-
+    /**
+     * So you mean we use abstraction which only has concrete methods and classes can implement
+     * those methods and write their own business logic,
+     * So we hide those business logic from other part of code or external client's right.
+     */
 
     public static void main(String[] args) {
         // Creating objects of subclasses
