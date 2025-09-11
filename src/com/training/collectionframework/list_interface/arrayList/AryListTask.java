@@ -200,7 +200,9 @@ public class AryListTask {
          *
          * ArrayList = dynamic, independent, full-featured list.
          */
-//        List<Integer> list_1 = Arrays.asList(1,2,3);
+//        List<Integer> list_1 = Arrays.asList(1,2,3); // This is a fixed size list
+//        List<String> independentList = new ArrayList<>(Arrays.asList(array)); // This is an independent list
+
 //
 //        try{
 //            list_1.add(4);
