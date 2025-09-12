@@ -9,6 +9,20 @@ import static java.util.List.*;
 public class AryListTask {
     public static void main(String[] args) {
 
+
+        /**
+         *
+         *
+         Operation	                       ArrayList	            LinkedList	         Why?
+         get(index)	                        O(1) - Fast	            O(n) - Slow	         Array: direct calculation. Linked List: sequential traversal.
+         Iteration	                        O(n) - Fast	            O(n) - Fast	         Both are efficient when using an iterator.
+         add()/remove() at END	            O(1) (amortized)	    O(1)	             Easy for both.
+         add()/remove() at START	        O(n) - Slow	            O(1) - Fast	         Array must shift all elements. Linked List just changes a pointer.
+         add()/remove() in MIDDLE	        O(n) - Slow	            O(n) - Slow	         Both require traversal/search, but LinkedList doesn't need to shift elements after the point of insertion/deletion.
+         *
+         */
+
+
         ArrayList<Integer> list = new ArrayList<Integer>();
 
         list.add(10);

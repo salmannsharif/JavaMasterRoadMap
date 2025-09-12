@@ -157,5 +157,29 @@ public class LinkedListArr {
          *    - Use Vector/Stack when: You need thread-safety
          *    - Use LinkedList when: You don't need thread-safety or need better performance
          */
+
+        /*
+        ArrayList (Random Access - Fast 🚀)
+        An ArrayList is built on top of a Java array. The elements are stored in contiguous (adjacent) memory blocks.
+
+        To get the element at index i: The JVM can calculate its exact memory address instantly using a simple formula:
+        memory_address = start_address + (i * size_of_each_element)
+
+        This is called constant time access or O(1) complexity.
+        It's extremely fast and takes the same amount of time to get the first element or the millionth element.
+
+        LinkedList (Sequential Access - Slow 🐢)
+        A LinkedList is a chain of nodes. Each node contains
+        the element and a pointer/reference to the next node (and often the previous node, for a doubly-linked list).
+        The nodes are scattered throughout memory.
+
+        To get the element at index i: The JVM has to start at the first node
+        (the head) and literally "walk" or "traverse" the chain of i nodes,
+         one by one, until it reaches the desired node.
+
+        This is called linear time access or O(n) complexity.
+        To get the last element of a list with 1,000,000 elements, it must traverse all 1,000,000 nodes.
+
+         */
     }
 }
