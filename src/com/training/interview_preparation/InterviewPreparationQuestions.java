@@ -162,7 +162,7 @@ public class InterviewPreparationQuestions {
 
 
         /**
-         * Question 13: You need a resizable array-like structure that is thread-safe for use in a
+         * Question 12: You need a resizable array-like structure that is thread-safe for use in a
          * multi-threaded environment. Which legacy collection class would you use,
          * and what is a key drawback of using it?
          *
