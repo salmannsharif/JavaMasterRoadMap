@@ -1,9 +1,6 @@
 package com.training.twoyearsexperiencedpreparation;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -60,11 +57,41 @@ public class Main {
                 System.out.println(key+ "-" +value));
     }
 
+    //Don't want to use condition here
+    static int  testData(int a){
+        //write  logic to return 7-11, 11-7
+        return 7+11-a;
+    }
 
+    static void findingDuplicates() {
+        int[] arr = {1, 1, 3, 4, 5, 6, 7, 4, 9, 10};
+        for(int i = 0 ; i < arr.length -1 ; i++){
+            for(int j = i+1 ; j < arr.length ; j++) {
+                if (arr[i] == arr[j]) {
+                    System.out.println(arr[i]);
+                }
+            }
+        }
+    }
+
+    static void findingDuplicatesUsingStream(){
+        List<Integer> num = List.of(8, 2, 7, 4, 9, 6, 7, 8, 9, 10);
+//        Map<Integer, Long> collect = num.stream().collect(Collectors.groupingBy(n -> n, Collectors.counting()));
+//        Set<Integer> collect = num.stream().collect(Collectors.groupingBy(n -> n, Collectors.counting()))
+//                .entrySet().stream().filter(e -> e.getValue() > 1).map(n -> n.getKey()).
+//                collect(Collectors.toSet());
+        Set<Integer> collect = num.stream().filter(n -> Collections.frequency(num, n) > 1).collect(Collectors.toSet());
+        System.out.println(collect);
+    }
 
     public static void main(String[] args) {
 //        moveZeroElementToRightInArray();
 //        moveZeroElementToRightInList();
-        sortingMapUsingByValue();
+//        sortingMapUsingByValue();
+//        System.out.println(testData(7));
+//        System.out.println(testData(11));
+//        findingDuplicates();
+//        findingDuplicatesUsingStream();
+
     }
 }
