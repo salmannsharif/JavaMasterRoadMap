@@ -118,15 +118,15 @@ public class WorkPlace {
         Collection<Integer> collection = new ArrayList<>();
         Collection<Integer> collection1 = new ArrayList<>();
 
-        collection1.add(3);
-        collection1.add(4);
-        collection1.add(5);
+        collection1.add(Integer.valueOf(3));
+        collection1.add(Integer.valueOf(4));
+        collection1.add(Integer.valueOf(5));
 
 //        collection.add(1);
 //        collection.add(2);
-        collection.add(3);
-        collection.add(4);
-        collection.add(5);
+        collection.add(Integer.valueOf(3));
+        collection.add(Integer.valueOf(4));
+        collection.add(Integer.valueOf(5));
 
         int i = collection.hashCode();
         System.out.println(i);

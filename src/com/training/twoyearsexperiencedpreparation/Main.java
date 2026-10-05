@@ -1,6 +1,7 @@
 package com.training.twoyearsexperiencedpreparation;
 
 import java.util.*;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -31,6 +32,24 @@ public class Main {
 
     }
 
+    static void moveZeroElementToLeftInArray(){
+        int[] arr = {0, 1, 0, 3, 12};
+        int count = arr.length-1;
+        for(int i =arr.length-1 ; i > 0; i--){
+            if(arr[i] != 0){
+                arr[count--] = arr[i];
+            }
+        }
+
+        while (count >= 0 ){
+            arr[count--] = 0;
+        }
+
+        for(int i : arr){
+            System.out.print(i+ " ");
+        }
+    }
+
     static void moveZeroElementToRightInList() {
         List<Integer> numbers = List.of(1,0,-3,0,5,-2,0,8,0,-4);
         List<Integer> collect = Stream.concat(numbers.stream().filter(n -> n != 0), numbers.stream().filter(n -> n == 0))
@@ -41,12 +60,12 @@ public class Main {
 
     static void sortingMapUsingByValue(){
         Map<String, Integer> map = new HashMap<>();
-        map.put("A", 10);
-        map.put("D", 32);
-        map.put("H", 76);
-        map.put("B", 97);
-        map.put("U", 43);
-        map.put("G", 95);
+        map.put("A", Integer.valueOf(10));
+        map.put("D", Integer.valueOf(32));
+        map.put("H", Integer.valueOf(76));
+        map.put("B", Integer.valueOf(97));
+        map.put("U", Integer.valueOf(99));
+        map.put("G", Integer.valueOf(100));
 
         LinkedHashMap<String, Integer> collect = map.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue())
@@ -84,6 +103,39 @@ public class Main {
         System.out.println(collect);
     }
 
+         static int[] twoSum(int[] numbers, int target) {
+
+            int left = 0;
+            int right = numbers.length - 1;
+
+            while (left < right) {
+
+                int sum = numbers[left] + numbers[right];
+
+                if (sum == target) {
+                    return new int[]{left + 1, right + 1};
+                }
+                else if (sum < target) {
+                    left++;
+                }
+                else {
+                    right--;
+                }
+            }
+
+            // Brute Force
+//        for(int i = 0 ; i < numbers.length ; i++){
+//            for(int j = i + 1 ; j < numbers.length ; j++){
+//                if(numbers[i] + numbers[j] == target){
+//                    return new int[]{i + 1, j + 1};
+//                }
+//            }
+//        }
+
+            return new int[]{-1, -1};
+
+    }
+
     public static void main(String[] args) {
 //        moveZeroElementToRightInArray();
 //        moveZeroElementToRightInList();
@@ -92,6 +144,10 @@ public class Main {
 //        System.out.println(testData(11));
 //        findingDuplicates();
 //        findingDuplicatesUsingStream();
+//        int[] index = twoSum(new int[]{2, 7, 11, 15}, 9);
+//        System.out.println(Arrays.toString(index));
+//        moveZeroElementToLeftInArray();
+
 
     }
 }
