@@ -136,6 +136,34 @@ public class Main {
 
     }
 
+    public static void findUniqueString(String str){
+        for(int i = 0 ; i < str.length(); i++){
+            boolean isUnique = true;
+            for(int j = 0 ; j < str.length(); j++){
+                if(i!=j && str.charAt(i) == str.charAt(j)){
+                    isUnique = false;
+                    break;
+                }
+            }
+            if(isUnique){
+                System.out.println("Unique string : " + str.charAt(i));
+            }
+        }
+
+    }
+
+    public static void findDuplicateChar(String str){
+        for(int i = 0 ; i < str.length(); i++){
+            for(int j=i+1; j< str.length(); j++) {
+                if (str.charAt(i) == str.charAt(j)) {
+                    System.out.println(str.charAt(i));
+                }
+            }
+        }
+    }
+
+
+
     public static void main(String[] args) {
 //        moveZeroElementToRightInArray();
 //        moveZeroElementToRightInList();
@@ -147,7 +175,7 @@ public class Main {
 //        int[] index = twoSum(new int[]{2, 7, 11, 15}, 9);
 //        System.out.println(Arrays.toString(index));
 //        moveZeroElementToLeftInArray();
-
-
+//        findUniqueString("aabbcdd");
+//        findDuplicateChar("aabbcdd");
     }
 }
